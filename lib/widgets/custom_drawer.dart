@@ -12,12 +12,9 @@ class CustomDrawer extends StatelessWidget {
       color: Colors.white,
       child: Column(
         children: [
-          UserListTile(
+          const UserListTile(
               tittle: 'jj', subTittle: 'dd', image: Assets.imagesAvatar),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: DrawerItemListView(),
-          )
+          DrawerItemListView()
         ],
       ),
     );
