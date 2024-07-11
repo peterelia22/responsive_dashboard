@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AllExpensesItemHeader extends StatelessWidget {
-  const AllExpensesItemHeader({super.key, required this.image});
+  const AllExpensesItemHeader(
+      {super.key, required this.image, required this.iconColor});
   final String image;
+  final Color iconColor;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,9 +21,11 @@ class AllExpensesItemHeader extends StatelessWidget {
         const Spacer(),
         Transform.rotate(
           angle: -1.57 * 2, // 90 degrees in radians
-          child: const Icon(
-              color: Color(0xff064061), Icons.arrow_back_ios_new_outlined),
-        )
+          child: Icon(
+            color: iconColor,
+            Icons.arrow_back_ios_new_outlined,
+          ),
+        ),
       ],
     );
   }
