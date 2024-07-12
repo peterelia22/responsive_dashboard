@@ -6,18 +6,16 @@ import 'package:responsive_dashboard/widgets/all_expenses_item.dart';
 import 'package:responsive_dashboard/widgets/all_expenses_item_header.dart';
 import 'package:responsive_dashboard/widgets/all_expenses_item_list_view.dart';
 
+import 'custom_back_ground_container.dart';
+
 class AllExpenses extends StatelessWidget {
   const AllExpenses({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: ShapeDecoration(
-          color: Colors.white,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
-      child: const Column(
+    return const CustomBackGroundContainer(
+      padding: 20,
+      child: Column(
         children: [
           AllExpensesHeader(),
           SizedBox(
