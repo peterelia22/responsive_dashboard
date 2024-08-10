@@ -19,7 +19,19 @@ class DesktopLayout extends StatelessWidget {
       SizedBox(
         width: 24,
       ),
-      Expanded(child: IncomeSection())
+      Expanded(
+          child: Column(
+        children: [
+          SizedBox(
+            height: 40,
+          ),
+          MyCardAndTransactionHistory(),
+          SizedBox(
+            height: 24,
+          ),
+          Expanded(child: IncomeSection())
+        ],
+      ))
     ]);
   }
 }
