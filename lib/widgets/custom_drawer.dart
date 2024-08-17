@@ -19,7 +19,9 @@ class CustomDrawer extends StatelessWidget {
           const SliverToBoxAdapter(
             child: UserListTile(
               user: UserInfoModel(
-                  image: Assets.imagesAvatar, tittle: 'jj', subTittle: 'dd'),
+                  image: Assets.imagesAvatar,
+                  tittle: 'Peter Elia',
+                  subTittle: 'peterelia914@gmail.com'),
             ),
           ),
           const SliverToBoxAdapter(

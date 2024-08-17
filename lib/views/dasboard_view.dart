@@ -19,10 +19,10 @@ class _DasBoardViewState extends State<DasBoardView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      drawer: MediaQuery.sizeOf(context).width < SizeConfig.tablet
+      drawer: MediaQuery.sizeOf(context).width <= SizeConfig.tablet + 30
           ? const CustomDrawer()
           : null,
-      appBar: MediaQuery.sizeOf(context).width < SizeConfig.tablet
+      appBar: MediaQuery.sizeOf(context).width <= SizeConfig.tablet + 30
           ? AppBar(
               backgroundColor: const Color(0XFFFAFAFA),
               elevation: 0,
