@@ -6,6 +6,8 @@ import 'package:responsive_dashboard/widgets/desktop_layout.dart';
 import 'package:responsive_dashboard/widgets/mobile_layout.dart';
 import 'package:responsive_dashboard/widgets/tablet_layout.dart';
 
+import '../utils/app_styles.dart';
+
 class DasBoardView extends StatefulWidget {
   const DasBoardView({super.key});
 
@@ -24,6 +26,12 @@ class _DasBoardViewState extends State<DasBoardView> {
           : null,
       appBar: MediaQuery.sizeOf(context).width <= SizeConfig.tablet + 30
           ? AppBar(
+              title: Center(
+                child: Text(
+                  'Dashboard ',
+                  style: AppStyles.semiBold24(context),
+                ),
+              ),
               backgroundColor: const Color(0XFFFAFAFA),
               elevation: 0,
               leading: IconButton(

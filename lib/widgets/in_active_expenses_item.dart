@@ -31,23 +31,32 @@ class InActiveExpensesItem extends StatelessWidget {
             const SizedBox(
               height: 34,
             ),
-            Text(
-              itemModel.tittle,
-              style: AppStyles.medium16(context),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.tittle,
+                style: AppStyles.medium16(context),
+              ),
             ),
             const SizedBox(
               height: 8,
             ),
-            Text(
-              itemModel.date,
-              style: AppStyles.regular14(context),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.date,
+                style: AppStyles.regular14(context),
+              ),
             ),
             const SizedBox(
               height: 16,
             ),
-            Text(
-              itemModel.price,
-              style: AppStyles.semiBold24(context),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.price,
+                style: AppStyles.semiBold24(context),
+              ),
             )
           ],
         ));

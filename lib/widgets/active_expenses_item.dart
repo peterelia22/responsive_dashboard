@@ -19,7 +19,7 @@ class ActiveExpensesItem extends StatelessWidget {
         decoration: ShapeDecoration(
             color: Color(0xff4EB7F2),
             shape: RoundedRectangleBorder(
-                side: const BorderSide(width: 1, color: Color(0xffF1F1F1)),
+                side: const BorderSide(width: 1, color: Color(0xff4EB7F2)),
                 borderRadius: BorderRadius.circular(12))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,24 +31,35 @@ class ActiveExpensesItem extends StatelessWidget {
             const SizedBox(
               height: 34,
             ),
-            Text(
-              itemModel.tittle,
-              style: AppStyles.medium16(context).copyWith(color: Colors.white),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.tittle,
+                style:
+                    AppStyles.medium16(context).copyWith(color: Colors.white),
+              ),
             ),
             const SizedBox(
               height: 8,
             ),
-            Text(
-              itemModel.date,
-              style: AppStyles.regular14(context).copyWith(color: Colors.white),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.date,
+                style:
+                    AppStyles.regular14(context).copyWith(color: Colors.white),
+              ),
             ),
             const SizedBox(
               height: 16,
             ),
-            Text(
-              itemModel.price,
-              style:
-                  AppStyles.semiBold24(context).copyWith(color: Colors.white),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                itemModel.price,
+                style:
+                    AppStyles.semiBold24(context).copyWith(color: Colors.white),
+              ),
             )
           ],
         ));

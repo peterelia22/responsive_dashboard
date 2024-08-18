@@ -6,6 +6,13 @@ import 'package:responsive_dashboard/widgets/all_expenses_item.dart';
 class AllExpensesItemListView extends StatefulWidget {
   const AllExpensesItemListView({super.key});
 
+  @override
+  State<AllExpensesItemListView> createState() =>
+      _AllExpensesItemListViewState();
+}
+
+class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
+  int activeIndex = 0;
   static const items = [
     AllExpensesItemModel(
         image: Assets.imagesBalance,
@@ -23,52 +30,50 @@ class AllExpensesItemListView extends StatefulWidget {
         date: 'April 2023',
         price: r'$21,422')
   ];
-
-  @override
-  State<AllExpensesItemListView> createState() =>
-      _AllExpensesItemListViewState();
-}
-
-class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
-  int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: AllExpensesItemListView.items.asMap().entries.map((e) {
-        int index = e.key;
-        var item = e.value;
-        if (index == 1) {
-          return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                UpdateIndex(index);
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: AllExpensesItem(
-                  itemModel: item,
-                  isSelected: activeIndex == index,
-                ),
-              ),
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              UpdateIndex(0);
+            },
+            child: AllExpensesItem(
+              itemModel: items[0],
+              isSelected: activeIndex == 0,
             ),
-          );
-        } else {
-          return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                UpdateIndex(index);
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: AllExpensesItem(
-                  itemModel: item,
-                  isSelected: activeIndex == index,
-                ),
-              ),
+          ),
+        ),
+        SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              UpdateIndex(1);
+            },
+            child: AllExpensesItem(
+              itemModel: items[1],
+              isSelected: activeIndex == 1,
             ),
-          );
-        }
-      }).toList(),
+          ),
+        ),
+        SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              UpdateIndex(2);
+            },
+            child: AllExpensesItem(
+              itemModel: items[2],
+              isSelected: activeIndex == 2,
+            ),
+          ),
+        ),
+      ],
     );
   }
 
